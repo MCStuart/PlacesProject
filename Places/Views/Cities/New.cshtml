@@ -7,10 +7,18 @@
 <body>
   <h1>Cities List</h1>
 
-  <form action="/cities" method="post">
-    <label for="description">Add a new city</label>
-    <input id="description" name="description" type="text">
-    <button type="submit">Add</button>
+  <form action="/cities" method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
+    <label for="cityName">Add a new city</label>
+    <input id="cityName" name="cityName" type="text">
+    <label for="length">How long did you stay?</label>
+    <input id="length" name="length" type="text">
+    <label for="roadDawgz">Who was/were your Road Dawg(z)(R)?</label>
+    <input id="roadDawgz" name="roadDawgz" type="text">
+    <label for="notes">Notes</label>
+    <input id="notes" name="notes" type="text">
+    <label for="favPhoto">Add a picture from your trip:</label>
+    <input id="favPhoto" name="favPhoto" type="file">
+    <button type="submit" value="Upload">Add</button>
   </form>
 
 </body>

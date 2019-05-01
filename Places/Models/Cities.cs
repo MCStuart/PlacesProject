@@ -1,28 +1,45 @@
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Places.Models
 {
   public class City
   {
-      private string _description;
+      private string _cityName;
+      private string _length;
+      private string _roadDawgz;
+      private string _notes;
+      // private Image _favPhoto;
       private int _id;
+
       private static List<City> _instances = new List<City> {};
 
-      public City (string description)
+      public string CityName { get => _cityName; set => _cityName = value; }
+      public string Length { get => _length; set => _length = value; }
+      public string RoadDawgz { get => _roadDawgz; set => _roadDawgz = value; }
+      public string Notes { get => _notes; set => _notes = value; }
+      // public string FavPhoto { get => _favPhoto; set => _favPhoto = value; }
+
+      // public City(string cityName, string length, string roadDawgz, string notes, Image favPhoto)
+      public City(string cityName, string length, string roadDawgz, string notes)
       {
-          _description = description;
+          _cityName = cityName;
+          _length = length;
+          _roadDawgz = roadDawgz;
+          _notes = notes;
+          // _favPhoto = favPhoto;
           _instances.Add(this);
           _id = _instances.Count;
       }
 
       public string GetDescription()
       {
-          return _description;
+          return _cityName;
       }
 
-      public void SetDescription(string newDescription)
+      public void SetDescription(string newCityName)
       {
-          _description = newDescription;
+          _cityName = newCityName;
       }
 
       public int GetId()

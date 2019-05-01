@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Places.Models;
 using System.Collections.Generic;
-
+using Microsoft.AspNetCore.Http;
+using System;
 namespace Places.Controllers
 {
     public class CitiesController : Controller
@@ -20,9 +21,10 @@ namespace Places.Controllers
         }
 
         [HttpPost("/cities")]
-        public ActionResult Create(string description)
+        public ActionResult Create(IFormFile favPhoto)
         {
-            City myCity = new City(description);
+          Console.WriteLine(favPhoto);
+            //City myCity = new City(description);
             return RedirectToAction("Index");
         }
 
